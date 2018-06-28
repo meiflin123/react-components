@@ -28,13 +28,22 @@ class GroceryItem extends React.Component {
 
   }
 
+  // render() {
+  //   var style = {
+  //     textDecoration: this.state.done ? <b>{this.props.item}</b> : this.props.item
+  //   }
+
+  //   return (
+  //     <li onClick={ this.onListItemhover.bind(this) }> {style.textDecoration} </li> )
+  // }
+
   render() {
     var style = {
-      textDecoration: this.state.done ? <b>{this.props.item}</b> : this.props.item
+      fontWeight: this.state.done ? 'bold' : 'normal'
     }
 
     return (
-      <li onClick={ this.onListItemhover.bind(this) }> {style.textDecoration} </li> )
+      <li style={style} onMouseEnter={ this.onListItemhover.bind(this) } onMouseLeave={ this.onListItemhover.bind(this) }> {this.props.item} </li> )
   }
 
 };
